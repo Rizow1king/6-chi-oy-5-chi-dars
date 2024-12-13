@@ -1,0 +1,231 @@
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    color: #333;
+    padding: 20px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Navbar styling */
+.navbar {
+    background: linear-gradient(to right, #ffffff, #f1f1f1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.navbar:hover {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #007bff;
+}
+
+.navbar-brand:hover {
+    color: #0056b3;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s, padding-left 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+    padding-left: 5px;
+}
+
+.nav-link:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-body {
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.bg-image img {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Grid layout for courses and students sections */
+.courses, .students {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #ffc107;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer a:hover {
+    background-color: #ffc107;
+    color: #333;
+}
+
+/* Tooltip styling */
+.tooltip-inner {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-arrow {
+    border-top-color: #007bff !important;
+}
+
+/* Button and link hover transition */
+.btn, .nav-link, footer a {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .courses, .students {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 20px 0;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Add a spinner for loading */
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.card-title a {
+    text-decoration: none !important;
+    color: inherit !important;
+    font-weight: bold;
+}
